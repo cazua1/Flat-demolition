@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnvironmentDestroyer : MonoBehaviour
 {
     [SerializeField] private Material[] _material;
+    [SerializeField] private float _forse = 2.5f;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -13,7 +14,7 @@ public class EnvironmentDestroyer : MonoBehaviour
         {            
             environment.ChangeMaterial(_material);
             rigidbody.isKinematic = false;
-            rigidbody.AddForceAtPosition(transform.up * 2.5f, transform.position, ForceMode.Impulse);            
+            rigidbody.AddForceAtPosition(transform.up * _forse, transform.position, ForceMode.Impulse);            
         }
     }    
 }
