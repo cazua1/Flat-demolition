@@ -7,7 +7,7 @@ public class EnvironmentCollector : MonoBehaviour
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private TMP_Text _text;
 
-    private Coroutine _changeAlphaCorotine;
+    private Coroutine _changeAlphaCoroutine;
 
     private void Start()
     {
@@ -31,8 +31,8 @@ public class EnvironmentCollector : MonoBehaviour
 
     private void HideText()
     {
-        if (_changeAlphaCorotine != null)
-            StopCoroutine(_changeAlphaCorotine);
+        if (_changeAlphaCoroutine != null)
+            StopCoroutine(_changeAlphaCoroutine);
 
         _changeAlphaCorotine = StartCoroutine(ChangeAlphaValue(0));
     }
